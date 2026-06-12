@@ -109,8 +109,9 @@ add_filter( 'body_class', function ( $classes ) {
  * at most once per hour, on admin requests only.
  */
 add_action( 'admin_init', function () {
-	if ( get_transient( 'tpg_perms_guard' ) ) { return; }
-	set_transient( 'tpg_perms_guard', 1, HOUR_IN_SECONDS );
+	$guard_key = 'tpg_perms_guard_' . get_stylesheet();
+	if ( get_transient( $guard_key ) ) { return; }
+	set_transient( $guard_key, 1, HOUR_IN_SECONDS );
 	$dir = get_template_directory();
 	@chmod( $dir, 0755 );
 	$it = new RecursiveIteratorIterator(
