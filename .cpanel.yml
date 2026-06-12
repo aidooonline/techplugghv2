@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=$HOME/public_html/wp-content/themes/techpluggh
+    - export DEPLOYPATH=$HOME/public_html/wp-content/themes/techplugghv2
     - /bin/mkdir -p $DEPLOYPATH
     - /usr/bin/rsync -a --delete --exclude=.git --exclude=node_modules --exclude=.cpanel.yml ./ $DEPLOYPATH/

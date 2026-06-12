@@ -1,6 +1,5 @@
 <?php if ( ! defined( 'ABSPATH' ) ) { exit; }
 $img = (int) tpg_opt( 'tpg_promo_image' );
-$on_sale = function_exists( 'wc_get_product_ids_on_sale' ) ? wc_get_product_ids_on_sale() : array();
 ?>
 <section class="wrap py-4 sm:py-6">
 	<div class="card-glow relative grid lg:grid-cols-2 items-stretch overflow-hidden">

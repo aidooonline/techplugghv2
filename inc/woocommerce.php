@@ -42,16 +42,6 @@ add_filter( 'woocommerce_loop_add_to_cart_link', function ( $html, $product ) {
 	return $html;
 }, 10, 2 );
 
-/** Cart count fragment for header bubble. */
-add_filter( 'woocommerce_add_to_cart_fragments', function ( $fragments ) {
-	ob_start();
-	$count = WC()->cart ? WC()->cart->get_cart_contents_count() : 0;
-	?>
-	<span class="tpg-cart-count" data-count="<?php echo esc_attr( $count ); ?>"><?php echo esc_html( $count ); ?></span>
-	<?php
-	$fragments['span.tpg-cart-count'] = ob_get_clean();
-	return $fragments;
-} );
 
 /**
  * WhatsApp-first purchase flow on the single product page.

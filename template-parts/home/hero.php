@@ -9,7 +9,7 @@ if ( function_exists( 'wc_get_products' ) ) {
 	foreach ( $ids as $pid ) { $p = wc_get_product( $pid ); if ( $p ) { $grid[] = $p; } }
 }
 ?>
-<section class="relative overflow-hidden border-b border-aur-line bg-grid bg-grid">
+<section class="relative overflow-hidden border-b border-aur-line bg-grid">
 	<div class="absolute -top-40 -left-32 w-[44rem] h-[44rem] rounded-full bg-aur-blue/10 blur-3xl pointer-events-none"></div>
 	<div class="absolute -bottom-40 -right-32 w-[40rem] h-[40rem] rounded-full bg-aur-violet/10 blur-3xl pointer-events-none"></div>
 	<div class="wrap relative grid lg:grid-cols-2 gap-12 items-center py-14 sm:py-20">
@@ -40,9 +40,7 @@ if ( function_exists( 'wc_get_products' ) ) {
 			<?php if ( $grid ) : ?>
 			<div class="grid grid-cols-2 gap-3 sm:gap-4">
 				<?php foreach ( $grid as $i => $p ) :
-					$img = get_the_post_thumbnail_url( $p->get_id(), 'large' );
-					$spec = trim( wp_strip_all_tags( $p->get_short_description() ) );
-					$spec = $spec ? explode( ' &middot; ', str_replace( ' · ', ' &middot; ', $spec ) ) : array(); ?>
+					$img = get_the_post_thumbnail_url( $p->get_id(), 'large' ); ?>
 					<a href="<?php echo esc_url( get_permalink( $p->get_id() ) ); ?>"
 						class="card-glow group p-3 flex flex-col hover:border-aur-blue/50 hover:shadow-glow transition<?php echo 0 === $i ? ' animate-floaty' : ''; ?>">
 						<span class="relative block aspect-[4/3] rounded-lg overflow-hidden bg-gradient-to-br from-aur-elevated to-aur-base">
