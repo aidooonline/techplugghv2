@@ -117,7 +117,7 @@
       });
     }
     if (window.jQuery) {
-      jQuery(document.body).on('added_to_cart', function () { syncBubble(); openCart(); });
+      jQuery(document.body).on('added_to_cart', function () { syncBubble(); });
       jQuery(document.body).on('wc_fragments_refreshed wc_fragments_loaded removed_from_cart', syncBubble);
     }
     syncBubble();

@@ -32,7 +32,7 @@ $brand = ( $terms && ! is_wp_error( $terms ) ) ? str_replace( ' Laptops', '', $t
 					?>
 				</div>
 				<div class="pcard__actions flex flex-col gap-2">
-					<a href="<?php the_permalink(); ?>" class="btn-ghost text-xs !py-2.5"><?php esc_html_e( 'Details', 'techpluggh' ); ?></a>
+					<a href="<?php the_permalink(); ?>" class="btn-ghost text-xs !py-2.5"><?php esc_html_e( 'Add to cart', 'techpluggh' ); ?></a>
 					<?php woocommerce_template_loop_add_to_cart(); ?>
 				</div>
 			</div>
