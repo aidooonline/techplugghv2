@@ -43,6 +43,14 @@ function tpg_setup_page() {
 				<p><button type="submit" class="button button-primary button-hero">Run Full Setup</button></p>
 			</form>
 			<hr>
+			<h2>Switch to brand categories</h2>
+			<p>Re-assigns every product to its brand category only (HP, Dell, Lenovo, MacBooks) and deletes the old purpose categories (UK Used, Business, Student). Run this once after activating v2 so the shop, header and homepage group by brand.</p>
+			<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
+				<input type="hidden" name="action" value="tpg_brandify">
+				<?php wp_nonce_field( 'tpg_brandify' ); ?>
+				<p><button type="submit" class="button button-primary button-hero">Switch to Brand Categories</button></p>
+			</form>
+			<hr>
 			<h2>Refresh category tile images</h2>
 			<p>Applies the distinct per-category artwork (UK Used, Business, Student, MacBooks, HP, Dell, Lenovo, Accessories) to the homepage category tiles. Overwrites the current tile image for each category and stores the new images in the Media Library, where you can replace them later.</p>
 			<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
@@ -587,6 +595,65 @@ function tpg_refresh_cat_images() {
 		}
 	}
 	$log[] = sprintf( '%d category tiles refreshed. Editable under Products > Categories.', $updated );
+	set_transient( 'tpg_setup_report', implode( "\n", $log ), 300 );
+	wp_safe_redirect( admin_url( 'tools.php?page=tpg-setup' ) );
+	exit;
+}
+
+/* =========================================================
+   Switch to brand categories: reassigns every product to its
+   brand category only, then deletes the old purpose categories
+   (UK Used, Business, Student). One click, safe to re-run.
+   ========================================================= */
+add_action( 'admin_post_tpg_brandify', 'tpg_brandify' );
+function tpg_brandify() {
+	if ( ! current_user_can( 'manage_options' ) ) { wp_die( 'Insufficient permissions.' ); }
+	check_admin_referer( 'tpg_brandify' );
+	if ( ! class_exists( 'WooCommerce' ) ) { wp_die( 'WooCommerce must be active.' ); }
+	@set_time_limit( 300 );
+
+	$map = array(
+		'HP'     => 'HP Laptops',
+		'Dell'   => 'Dell Laptops',
+		'Lenovo' => 'Lenovo Laptops',
+		'Apple'  => 'MacBooks',
+	);
+
+	/* Ensure brand terms exist. */
+	$brand_ids = array();
+	foreach ( tpg_setup_data( 'categories' ) as $c ) {
+		$term = term_exists( $c['slug'], 'product_cat' );
+		if ( ! $term ) { $term = wp_insert_term( $c['name'], 'product_cat', array( 'slug' => $c['slug'], 'description' => $c['desc'] ) ); }
+		if ( ! is_wp_error( $term ) ) { $brand_ids[ $c['name'] ] = (int) ( is_array( $term ) ? $term['term_id'] : $term ); }
+	}
+
+	/* Reassign every product to its brand category only. */
+	$updated = 0;
+	$page    = 1;
+	do {
+		$products = wc_get_products( array( 'limit' => 50, 'page' => $page, 'status' => 'publish' ) );
+		foreach ( $products as $product ) {
+			$brand = strtok( $product->get_name(), ' ' );
+			$cat   = isset( $map[ $brand ] ) ? $map[ $brand ] : null;
+			if ( $cat && isset( $brand_ids[ $cat ] ) ) {
+				wp_set_object_terms( $product->get_id(), array( $brand_ids[ $cat ] ), 'product_cat', false );
+				$updated++;
+			}
+		}
+		$page++;
+	} while ( count( $products ) === 50 );
+
+	/* Delete the purpose categories. */
+	$deleted = array();
+	foreach ( array( 'uk-used-laptops', 'business-laptops', 'student-laptops' ) as $slug ) {
+		$t = get_term_by( 'slug', $slug, 'product_cat' );
+		if ( $t ) { wp_delete_term( $t->term_id, 'product_cat' ); $deleted[] = $t->name; }
+	}
+
+	$log   = array();
+	$log[] = sprintf( '%d products re-assigned to brand categories only.', $updated );
+	$log[] = $deleted ? 'Purpose categories deleted: ' . implode( ', ', $deleted ) . '.' : 'No purpose categories found (already clean).';
+	$log[] = 'Header chips and the homepage brand row now show brands only.';
 	set_transient( 'tpg_setup_report', implode( "\n", $log ), 300 );
 	wp_safe_redirect( admin_url( 'tools.php?page=tpg-setup' ) );
 	exit;

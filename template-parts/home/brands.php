@@ -1,7 +1,7 @@
 <?php if ( ! defined( 'ABSPATH' ) ) { exit; }
 if ( ! taxonomy_exists( 'product_cat' ) ) { return; }
-$cats = get_terms( array( 'taxonomy'=>'product_cat','hide_empty'=>true,'number'=>8,'orderby'=>'count','order'=>'DESC' ) );
-if ( is_wp_error( $cats ) || ! $cats ) { return; }
+$cats = tpg_brand_terms( 6 );
+if ( ! $cats ) { return; }
 ?>
 <section class="wrap py-16 sm:py-20">
 	<div class="flex items-end justify-between mb-8 gap-4">
@@ -11,10 +11,10 @@ if ( is_wp_error( $cats ) || ! $cats ) { return; }
 		</div>
 		<a href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" class="menu-link hidden sm:block text-aur-blue">All laptops &rarr;</a>
 	</div>
-	<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+	<div class="flex gap-3 sm:gap-4 overflow-x-auto pb-2 -mx-5 px-5 sm:mx-0 sm:px-0 sm:overflow-visible [scrollbar-width:none] [-ms-overflow-style:none]">
 		<?php foreach ( $cats as $cat ) :
 			$thumb_id = (int) get_term_meta( $cat->term_id, 'thumbnail_id', true ); ?>
-			<a href="<?php echo esc_url( get_term_link( $cat ) ); ?>" class="card-glow group p-5 flex flex-col items-center text-center hover:-translate-y-1 hover:border-aur-blue/50 hover:shadow-glow transition">
+			<a href="<?php echo esc_url( get_term_link( $cat ) ); ?>" class="card-glow group shrink-0 w-36 sm:w-auto sm:flex-1 p-5 flex flex-col items-center text-center hover:-translate-y-1 hover:border-aur-blue/50 hover:shadow-glow transition">
 				<span class="w-20 h-20 rounded-2xl overflow-hidden bg-gradient-to-br from-aur-elevated to-aur-base flex items-center justify-center mb-3">
 					<?php tpg_image_or_placeholder( $thumb_id, 'medium', 'w-full h-full object-cover group-hover:scale-105 transition duration-500' ); ?>
 				</span>

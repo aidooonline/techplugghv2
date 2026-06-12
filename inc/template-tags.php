@@ -120,3 +120,13 @@ class TPG_Nav_Walker extends Walker_Nav_Menu {
 	public function start_lvl( &$output, $depth = 0, $args = null ) { $output .= '<ul class="tpg-submenu">'; }
 	public function end_lvl( &$output, $depth = 0, $args = null ) { $output .= '</ul>'; }
 }
+
+/** Brand category terms only (whitelist), for nav chips and the homepage brand row. */
+function tpg_brand_terms( $limit = 8 ) {
+	if ( ! taxonomy_exists( 'product_cat' ) ) { return array(); }
+	$slugs = array( 'hp-laptops', 'dell-laptops', 'lenovo-laptops', 'macbooks', 'laptop-accessories' );
+	$terms = get_terms( array( 'taxonomy' => 'product_cat', 'slug' => $slugs, 'hide_empty' => true ) );
+	if ( is_wp_error( $terms ) || ! $terms ) { return array(); }
+	usort( $terms, function ( $a, $b ) { return $b->count <=> $a->count; } );
+	return array_slice( $terms, 0, $limit );
+}

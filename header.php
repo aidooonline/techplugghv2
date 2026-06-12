@@ -6,11 +6,7 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 $shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop' );
 // Brand quick-links for the secondary nav bar.
-$brand_terms = array();
-if ( taxonomy_exists( 'product_cat' ) ) {
-	$brand_terms = get_terms( array( 'taxonomy' => 'product_cat', 'hide_empty' => true, 'number' => 8, 'orderby' => 'count', 'order' => 'DESC' ) );
-	if ( is_wp_error( $brand_terms ) ) { $brand_terms = array(); }
-}
+$brand_terms = function_exists( 'tpg_brand_terms' ) ? tpg_brand_terms( 6 ) : array();
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
