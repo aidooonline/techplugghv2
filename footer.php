@@ -82,8 +82,8 @@ $shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 
 	</div>
 </footer>
 
-<?php if ( tpg_wa_number() ) : ?>
-<!-- WhatsApp chat box: an on-page chat panel, clearly branded as WhatsApp. -->
+<?php if ( tpg_wa_number() && ! is_front_page() ) : ?>
+<!-- WhatsApp chat box: an on-page chat panel, clearly branded as WhatsApp. Hidden on the homepage. -->
 <div id="tpg-chat" class="fixed bottom-5 right-5 z-40">
 	<!-- Panel -->
 	<div id="tpg-chat-panel" class="hidden absolute bottom-20 right-0 w-[320px] max-w-[88vw] rounded-2xl overflow-hidden border border-aur-line shadow-card bg-aur-surface">

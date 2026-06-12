@@ -10,7 +10,7 @@ $shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 
 			<p class="text-aur-muted mt-4 max-w-lg mx-auto">Find your next laptop today. New stock added every week.</p>
 			<div class="mt-8 flex flex-wrap gap-3 justify-center">
 				<a href="<?php echo esc_url( $shop_url ); ?>" class="btn-primary">Shop laptops</a>
-				<?php if ( tpg_wa_number() ) : ?><button type="button" data-open-chat class="btn-wa">Chat with us</button><?php endif; ?>
+				
 			</div>
 		</div>
 	</div>
