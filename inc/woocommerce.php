@@ -25,12 +25,14 @@ remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 add_filter( 'loop_shop_columns', function () { return 4; } );
 add_filter( 'loop_shop_per_page', function () { return 12; } );
 
-/** Replace "Add to cart" text on archives. */
-add_filter( 'woocommerce_product_add_to_cart_text', function ( $text ) {
-	return is_shop() || is_product_category() ? __( 'View laptop', 'techpluggh' ) : $text;
-}, 10 );
+/** Archive add-to-cart button label. */
+add_filter( 'woocommerce_product_add_to_cart_text', function ( $text, $product ) {
+	if ( is_shop() || is_product_category() || is_product_taxonomy() ) {
+		return $product && ! $product->is_in_stock() ? __( 'Out of stock', 'techpluggh' ) : __( 'Add to cart', 'techpluggh' );
+	}
+	return $text;
+}, 10, 2 );
 
-/** Force "View laptop" archive button to link to product (not ajax add). */
 
 
 
