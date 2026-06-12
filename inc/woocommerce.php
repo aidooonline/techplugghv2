@@ -114,7 +114,7 @@ add_filter( 'woocommerce_add_to_cart_fragments', function ( $fragments ) {
 remove_action( 'woocommerce_proceed_to_checkout', 'woocommerce_button_proceed_to_checkout', 20 );
 add_action( 'woocommerce_proceed_to_checkout', function () {
 	if ( function_exists( 'tpg_wa_cart_url' ) && function_exists( 'tpg_wa_number' ) && tpg_wa_number() ) {
-		echo '<a href="' . esc_url( tpg_wa_cart_url() ) . '" class="checkout-button button alt wc-forward" style="width:100%;text-align:center">' . esc_html__( 'Checkout on WhatsApp', 'techpluggh' ) . '</a>';
+		echo '<a href="' . esc_url( tpg_wa_cart_url() ) . '" class="checkout-button button alt wc-forward" style="width:100%;text-align:center">' . esc_html__( 'Checkout', 'techpluggh' ) . '</a>';
 	} else {
 		woocommerce_button_proceed_to_checkout();
 	}

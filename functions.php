@@ -59,7 +59,7 @@ function tpg_assets() {
 	$tpg_l10n = array( 'ajaxUrl' => admin_url( 'admin-ajax.php' ) );
 	if ( function_exists( 'tpg_wa_cart_url' ) && function_exists( 'tpg_wa_number' ) && tpg_wa_number() ) {
 		$tpg_l10n['waCartUrl']   = tpg_wa_cart_url();
-		$tpg_l10n['waCartLabel'] = __( 'Checkout on WhatsApp', 'techpluggh' );
+		$tpg_l10n['waCartLabel'] = __( 'Checkout', 'techpluggh' );
 	}
 	wp_localize_script( 'techpluggh-main', 'TPG', $tpg_l10n );
 

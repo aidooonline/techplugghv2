@@ -98,7 +98,7 @@ $shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 
 		</div>
 		<div class="p-5 border-t border-aur-line flex flex-col gap-2.5">
 			<?php if ( function_exists( 'tpg_wa_cart_url' ) && tpg_wa_number() ) : ?>
-				<a href="<?php echo esc_url( tpg_wa_cart_url() ); ?>" class="btn-wa w-full"><?php esc_html_e( 'Checkout on WhatsApp', 'techpluggh' ); ?></a>
+				<a href="<?php echo esc_url( tpg_wa_cart_url() ); ?>" class="btn-wa w-full"><?php esc_html_e( 'Checkout', 'techpluggh' ); ?></a>
 			<?php endif; ?>
 			<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="btn-ghost w-full text-sm"><?php esc_html_e( 'View full cart', 'techpluggh' ); ?></a>
 		</div>
