@@ -92,7 +92,6 @@
   document.addEventListener('DOMContentLoaded', function () {
     var drawer = document.getElementById('tpg-cart-drawer');
     var panel = document.getElementById('tpg-cart-panel');
-    var toggle = document.getElementById('tpg-cart-toggle');
 
     function openCart() {
       if (!drawer) return;
@@ -106,7 +105,6 @@
       document.body.style.overflow = '';
       setTimeout(function () { drawer.classList.add('hidden'); }, 300);
     }
-    if (toggle) toggle.addEventListener('click', openCart);
     if (drawer) drawer.querySelectorAll('[data-close-cart]').forEach(function (el) { el.addEventListener('click', closeCart); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeCart(); });
 
@@ -124,16 +122,26 @@
     }
     syncBubble();
 
-    /* Block-based cart page: point its checkout button at WhatsApp checkout */
+    /* Block-based cart page: point its checkout button at WhatsApp checkout.
+       Guards prevent self-triggering mutations (observer loop = frozen page). */
     if (window.TPG && TPG.waCartUrl) {
+      var waLabel = TPG.waCartLabel || 'Checkout on WhatsApp';
+      var observer = null;
       var fixBlockCheckout = function () {
+        var changed = false;
         document.querySelectorAll('.wc-block-cart__submit-container a, a.wc-block-cart__submit-button').forEach(function (a) {
-          a.setAttribute('href', TPG.waCartUrl);
-          a.textContent = TPG.waCartLabel || 'Checkout on WhatsApp';
+          if (a.getAttribute('href') !== TPG.waCartUrl) { a.setAttribute('href', TPG.waCartUrl); changed = true; }
+          if (a.textContent !== waLabel) { a.textContent = waLabel; changed = true; }
         });
+        return changed;
       };
-      fixBlockCheckout();
-      new MutationObserver(fixBlockCheckout).observe(document.body, { childList: true, subtree: true });
+      var safeFix = function () {
+        if (observer) observer.disconnect();
+        fixBlockCheckout();
+        if (observer) observer.observe(document.body, { childList: true, subtree: true });
+      };
+      observer = new MutationObserver(function () { safeFix(); });
+      safeFix();
     }
   });
 })();
