@@ -31,13 +31,9 @@ $brand = ( $terms && ! is_wp_error( $terms ) ) ? str_replace( ' Laptops', '', $t
 					} else { echo '<span class="pcard__stock is-out">Out of stock</span>'; }
 					?>
 				</div>
-				<div class="grid grid-cols-2 gap-2">
+				<div class="pcard__actions flex flex-col gap-2">
 					<a href="<?php the_permalink(); ?>" class="btn-ghost text-xs !py-2.5"><?php esc_html_e( 'Details', 'techpluggh' ); ?></a>
-					<?php if ( function_exists( 'tpg_wa_number' ) && '' !== tpg_wa_number() && function_exists( 'tpg_wa_buy_url' ) && $product->is_in_stock() ) : ?>
-						<a href="<?php echo esc_url( tpg_wa_buy_url( $product->get_id() ) ); ?>" class="btn-primary text-xs !py-2.5"><?php esc_html_e( 'Buy Now', 'techpluggh' ); ?></a>
-					<?php else : ?>
-						<a href="<?php the_permalink(); ?>" class="btn-primary text-xs !py-2.5"><?php esc_html_e( 'Buy Now', 'techpluggh' ); ?></a>
-					<?php endif; ?>
+					<?php woocommerce_template_loop_add_to_cart(); ?>
 				</div>
 			</div>
 		</div>

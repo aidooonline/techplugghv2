@@ -85,3 +85,55 @@
     }
   });
 })();
+
+/* Mini-cart drawer + cart bubble sync + block-cart WhatsApp checkout */
+(function () {
+  'use strict';
+  document.addEventListener('DOMContentLoaded', function () {
+    var drawer = document.getElementById('tpg-cart-drawer');
+    var panel = document.getElementById('tpg-cart-panel');
+    var toggle = document.getElementById('tpg-cart-toggle');
+
+    function openCart() {
+      if (!drawer) return;
+      drawer.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      requestAnimationFrame(function () { if (panel) panel.style.transform = 'translateX(0)'; });
+    }
+    function closeCart() {
+      if (!drawer) return;
+      if (panel) panel.style.transform = 'translateX(100%)';
+      document.body.style.overflow = '';
+      setTimeout(function () { drawer.classList.add('hidden'); }, 300);
+    }
+    if (toggle) toggle.addEventListener('click', openCart);
+    if (drawer) drawer.querySelectorAll('[data-close-cart]').forEach(function (el) { el.addEventListener('click', closeCart); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeCart(); });
+
+    /* Open the drawer when something is added, sync bubble visibility */
+    function syncBubble() {
+      document.querySelectorAll('.tpg-cart-bubble').forEach(function (b) {
+        var inner = b.querySelector('.tpg-cart-count');
+        var n = inner ? parseInt(inner.getAttribute('data-count') || inner.textContent || '0', 10) : 0;
+        b.classList.toggle('opacity-0', !(n > 0));
+      });
+    }
+    if (window.jQuery) {
+      jQuery(document.body).on('added_to_cart', function () { syncBubble(); openCart(); });
+      jQuery(document.body).on('wc_fragments_refreshed wc_fragments_loaded removed_from_cart', syncBubble);
+    }
+    syncBubble();
+
+    /* Block-based cart page: point its checkout button at WhatsApp checkout */
+    if (window.TPG && TPG.waCartUrl) {
+      var fixBlockCheckout = function () {
+        document.querySelectorAll('.wc-block-cart__submit-container a, a.wc-block-cart__submit-button').forEach(function (a) {
+          a.setAttribute('href', TPG.waCartUrl);
+          a.textContent = TPG.waCartLabel || 'Checkout on WhatsApp';
+        });
+      };
+      fixBlockCheckout();
+      new MutationObserver(fixBlockCheckout).observe(document.body, { childList: true, subtree: true });
+    }
+  });
+})();

@@ -253,3 +253,68 @@ add_action( 'woocommerce_blocks_loaded', function () {
 		$registry->register( new TPG_Gateway_WhatsApp_Blocks() );
 	} );
 } );
+
+/* =========================================================
+   WhatsApp CART checkout: creates a tracked pending order from
+   the entire cart, then redirects to WhatsApp with the full
+   itemised order and the order reference. Used by the cart
+   page checkout button and the mini-cart drawer.
+   ========================================================= */
+
+/** Nonce-protected endpoint URL for cart checkout. */
+function tpg_wa_cart_url() {
+	return wp_nonce_url( add_query_arg( 'tpg_wa_cart', '1', home_url( '/' ) ), 'tpg_wa_cart' );
+}
+
+add_action( 'template_redirect', 'tpg_wa_cart_checkout' );
+function tpg_wa_cart_checkout() {
+	if ( empty( $_GET['tpg_wa_cart'] ) ) { return; }
+	if ( empty( $_GET['_wpnonce'] ) || ! wp_verify_nonce( sanitize_key( $_GET['_wpnonce'] ), 'tpg_wa_cart' ) ) {
+		wp_safe_redirect( wc_get_cart_url() );
+		exit;
+	}
+	$number = function_exists( 'tpg_wa_number' ) ? tpg_wa_number() : '';
+	if ( '' === $number || ! WC()->cart || WC()->cart->is_empty() ) {
+		wp_safe_redirect( wc_get_cart_url() );
+		exit;
+	}
+
+	$money = function ( $amount ) {
+		return html_entity_decode( wp_strip_all_tags( wc_price( $amount ) ), ENT_QUOTES, 'UTF-8' );
+	};
+
+	/* Create the tracked order from the cart. */
+	$order = wc_create_order( array( 'status' => 'pending', 'created_via' => 'whatsapp_cart' ) );
+	$lines = array();
+	if ( ! is_wp_error( $order ) ) {
+		foreach ( WC()->cart->get_cart() as $item ) {
+			$p = $item['data'];
+			if ( ! $p || ! $p->exists() ) { continue; }
+			$order->add_product( $p, $item['quantity'] );
+			$lines[] = '- ' . $p->get_name() . ' x' . $item['quantity'] . ' = ' . $money( (float) $p->get_price() * (int) $item['quantity'] );
+		}
+		$order->calculate_totals();
+		$order->add_order_note( __( 'Created from cart checkout on WhatsApp. Confirm details with the customer in chat, then update the order status.', 'techpluggh' ) );
+		$order->save();
+	} else {
+		foreach ( WC()->cart->get_cart() as $item ) {
+			$p = $item['data'];
+			if ( $p && $p->exists() ) {
+				$lines[] = '- ' . $p->get_name() . ' x' . $item['quantity'] . ' = ' . $money( (float) $p->get_price() * (int) $item['quantity'] );
+			}
+		}
+	}
+
+	$msg   = array();
+	$msg[] = 'Hello TechPlug GH, I want to order the following from my cart:';
+	$msg[] = '';
+	$msg   = array_merge( $msg, $lines );
+	$msg[] = '';
+	$msg[] = 'Total: ' . $money( WC()->cart->get_total( 'edit' ) );
+	if ( ! is_wp_error( $order ) ) { $msg[] = 'Order ref: #' . $order->get_order_number(); }
+
+	WC()->cart->empty_cart();
+
+	wp_redirect( 'https://wa.me/' . $number . '?text=' . rawurlencode( implode( "\n", $msg ) ) );
+	exit;
+}

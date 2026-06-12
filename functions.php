@@ -56,9 +56,12 @@ function tpg_assets() {
 	wp_enqueue_style( 'techpluggh-style', get_stylesheet_uri(), array( 'techpluggh-main' ), TPG_VERSION );
 
 	wp_enqueue_script( 'techpluggh-main', TPG_URI . '/assets/js/main.js', array(), TPG_VERSION, true );
-	wp_localize_script( 'techpluggh-main', 'TPG', array(
-		'ajaxUrl' => admin_url( 'admin-ajax.php' ),
-	) );
+	$tpg_l10n = array( 'ajaxUrl' => admin_url( 'admin-ajax.php' ) );
+	if ( function_exists( 'tpg_wa_cart_url' ) && function_exists( 'tpg_wa_number' ) && tpg_wa_number() ) {
+		$tpg_l10n['waCartUrl']   = tpg_wa_cart_url();
+		$tpg_l10n['waCartLabel'] = __( 'Checkout on WhatsApp', 'techpluggh' );
+	}
+	wp_localize_script( 'techpluggh-main', 'TPG', $tpg_l10n );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

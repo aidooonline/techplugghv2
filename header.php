@@ -48,6 +48,13 @@ $brand_terms = function_exists( 'tpg_brand_terms' ) ? tpg_brand_terms( 6 ) : arr
 			<button id="tpg-search-toggle" class="md:hidden text-aur-paper/80 hover:text-aur-blue p-2" aria-label="<?php esc_attr_e( 'Search', 'techpluggh' ); ?>">
 				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3" stroke-linecap="round"/></svg>
 			</button>
+			<?php if ( function_exists( 'WC' ) ) :
+				$cart_count = WC()->cart ? WC()->cart->get_cart_contents_count() : 0; ?>
+			<button id="tpg-cart-toggle" type="button" class="relative text-aur-paper/80 hover:text-aur-blue p-2" aria-label="<?php esc_attr_e( 'Open cart', 'techpluggh' ); ?>">
+				<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6h15l-1.5 9h-12z" stroke-linejoin="round"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M6 6L5 3H2" stroke-linecap="round"/></svg>
+				<span class="tpg-cart-bubble absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 rounded-full bg-aurora text-white text-[10px] font-bold grid place-items-center<?php echo $cart_count ? '' : ' opacity-0'; ?>"><span class="tpg-cart-count" data-count="<?php echo esc_attr( $cart_count ); ?>"><?php echo esc_html( $cart_count ); ?></span></span>
+			</button>
+			<?php endif; ?>
 			<a href="<?php echo esc_url( $shop_url ); ?>" class="hidden sm:inline-flex btn-primary text-xs px-5 py-2.5"><?php esc_html_e( 'Shop all', 'techpluggh' ); ?></a>
 		</div>
 	</div>

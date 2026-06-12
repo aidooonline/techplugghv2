@@ -82,6 +82,30 @@ $shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 
 	</div>
 </footer>
 
+<?php if ( function_exists( 'WC' ) && function_exists( 'tpg_minicart_items_html' ) ) : ?>
+<!-- Mini-cart drawer -->
+<div id="tpg-cart-drawer" class="fixed inset-0 z-50 hidden">
+	<div class="absolute inset-0 bg-black/70" data-close-cart></div>
+	<aside class="absolute right-0 top-0 h-full w-[380px] max-w-[92vw] bg-aur-surface border-l border-aur-line flex flex-col translate-x-full transition-transform duration-300" id="tpg-cart-panel">
+		<div class="flex items-center justify-between px-5 py-4 border-b border-aur-line">
+			<h3 class="font-display font-bold text-lg"><?php esc_html_e( 'Your cart', 'techpluggh' ); ?></h3>
+			<button type="button" data-close-cart class="text-aur-paper/80 hover:text-aur-paper p-1" aria-label="<?php esc_attr_e( 'Close cart', 'techpluggh' ); ?>">
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
+			</button>
+		</div>
+		<div class="flex-1 overflow-y-auto px-5">
+			<?php echo tpg_minicart_items_html(); ?>
+		</div>
+		<div class="p-5 border-t border-aur-line flex flex-col gap-2.5">
+			<?php if ( function_exists( 'tpg_wa_cart_url' ) && tpg_wa_number() ) : ?>
+				<a href="<?php echo esc_url( tpg_wa_cart_url() ); ?>" class="btn-wa w-full"><?php esc_html_e( 'Checkout on WhatsApp', 'techpluggh' ); ?></a>
+			<?php endif; ?>
+			<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="btn-ghost w-full text-sm"><?php esc_html_e( 'View full cart', 'techpluggh' ); ?></a>
+		</div>
+	</aside>
+</div>
+<?php endif; ?>
+
 <?php wp_footer(); ?>
 </body>
 </html>
