@@ -1,0 +1,32 @@
+[
+ {
+  "name": "HP Laptops",
+  "slug": "hp-laptops",
+  "desc": "HP EliteBook and ProBook business laptops, tested and graded.",
+  "image": "categories/hp-laptops.jpg"
+ },
+ {
+  "name": "Dell Laptops",
+  "slug": "dell-laptops",
+  "desc": "Dell Latitude and Precision business laptops.",
+  "image": "categories/dell-laptops.jpg"
+ },
+ {
+  "name": "Lenovo Laptops",
+  "slug": "lenovo-laptops",
+  "desc": "Lenovo ThinkPad, IdeaPad and Yoga laptops.",
+  "image": "categories/lenovo-laptops.jpg"
+ },
+ {
+  "name": "MacBooks",
+  "slug": "macbooks",
+  "desc": "Apple MacBook laptops.",
+  "image": "categories/macbooks.jpg"
+ },
+ {
+  "name": "Laptop Accessories",
+  "slug": "laptop-accessories",
+  "desc": "Chargers, bags, docks, mice and other laptop accessories.",
+  "image": "categories/laptop-accessories.jpg"
+ }
+]
