@@ -3,7 +3,7 @@
     "sku": "TPG-HP-830G6-I5-8-256",
     "name": "HP EliteBook 830 G6 - Core i5 8th Gen, 8GB, 256GB SSD",
     "price": "2600",
-    "stock": 33,
+    "stock": 24,
     "weight": "1.33",
     "featured": true,
     "short": "Intel Core i5-8265U / i5-8365U &middot; 8GB DDR4-2400 &middot; 256GB NVMe / M.2 SSD &middot; 13.3 inch FHD &middot; UK used, tested &amp; warranty-backed.",
@@ -18,13 +18,15 @@
       "13 inch",
       "UK used"
     ],
-    "image": ""
+    "image": "",
+    "confirmed_stock": 24,
+    "units_held_pending_storage_check": 9
   },
   {
     "sku": "TPG-HP-840G6-I5-8-256",
     "name": "HP EliteBook 840 G6 - Core i5 8th Gen, 8GB, 256GB SSD",
     "price": "2600",
-    "stock": 26,
+    "stock": 25,
     "weight": "1.48",
     "featured": true,
     "short": "Intel Core i5-8265U / i5-8365U &middot; 8GB DDR4-2400 &middot; 256GB NVMe / M.2 SSD &middot; 14 inch FHD &middot; UK used, tested &amp; warranty-backed.",
@@ -39,7 +41,9 @@
       "14 inch",
       "UK used"
     ],
-    "image": ""
+    "image": "",
+    "confirmed_stock": 25,
+    "units_held_pending_storage_check": 1
   },
   {
     "sku": "TPG-HP-840G6-I5-16-256",
@@ -86,7 +90,7 @@
     "sku": "TPG-HP-840G5-I5-8-256",
     "name": "HP EliteBook 840 G5 - Core i5 8th Gen, 8GB, 256GB SSD",
     "price": "2500",
-    "stock": 11,
+    "stock": 10,
     "weight": "1.48",
     "featured": true,
     "short": "Intel Core i5-8250U / i5-8350U &middot; 8GB DDR4-2400 &middot; 256GB NVMe / M.2 SSD &middot; 14 inch FHD &middot; UK used, tested &amp; warranty-backed.",
@@ -101,7 +105,9 @@
       "14 inch",
       "UK used"
     ],
-    "image": ""
+    "image": "",
+    "confirmed_stock": 10,
+    "units_held_pending_storage_check": 1
   },
   {
     "sku": "TPG-HP-840G5-I5-16-256",
@@ -128,7 +134,7 @@
     "sku": "TPG-HP-445RG6-R5-8-256",
     "name": "HP ProBook 445r G6 - Ryzen 5, 8GB, 256GB SSD",
     "price": "2500",
-    "stock": 3,
+    "stock": 2,
     "weight": "1.6",
     "featured": false,
     "short": "AMD Ryzen 5 3500U &middot; 8GB DDR4 &middot; 256GB NVMe / M.2 SSD &middot; 14 inch FHD &middot; UK used, tested &amp; warranty-backed.",
@@ -143,7 +149,9 @@
       "AMD",
       "UK used"
     ],
-    "image": ""
+    "image": "",
+    "confirmed_stock": 2,
+    "units_held_pending_storage_check": 1
   },
   {
     "sku": "TPG-HP-445G7-R5-8-256",

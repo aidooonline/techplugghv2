@@ -1,0 +1,39 @@
+{
+  "generated": "2026-07-15",
+  "purpose": "Units held out of advertised WooCommerce stock because their SSD capacity was blank (0GB) in the source sheet. Advertised listings therefore never claim a capacity we cannot stand behind. To release: bench-check the drive, then raise the SKU stock by units_held and clear this entry (create_products.py is idempotent by SKU).",
+  "total_units_held": 12,
+  "items": [
+    {
+      "sku": "TPG-HP-830G6-I5-8-256",
+      "name": "HP EliteBook 830 G6 - Core i5 8th Gen, 8GB, 256GB SSD",
+      "units_held": 9,
+      "reason": "SSD capacity not recorded in source sheet (logged 0GB). Model has one M.2 slot, 256GB is standard; hold from advertised stock until capacity is bench-verified.",
+      "advertised_now": 24,
+      "total_physical": 33
+    },
+    {
+      "sku": "TPG-HP-840G6-I5-8-256",
+      "name": "HP EliteBook 840 G6 - Core i5 8th Gen, 8GB, 256GB SSD",
+      "units_held": 1,
+      "reason": "SSD capacity not recorded in source sheet (logged 0GB). Model has one M.2 slot, 256GB is standard; hold from advertised stock until capacity is bench-verified.",
+      "advertised_now": 25,
+      "total_physical": 26
+    },
+    {
+      "sku": "TPG-HP-840G5-I5-8-256",
+      "name": "HP EliteBook 840 G5 - Core i5 8th Gen, 8GB, 256GB SSD",
+      "units_held": 1,
+      "reason": "SSD capacity not recorded in source sheet (logged 0GB). Model has one M.2 slot, 256GB is standard; hold from advertised stock until capacity is bench-verified.",
+      "advertised_now": 10,
+      "total_physical": 11
+    },
+    {
+      "sku": "TPG-HP-445RG6-R5-8-256",
+      "name": "HP ProBook 445r G6 - Ryzen 5, 8GB, 256GB SSD",
+      "units_held": 1,
+      "reason": "SSD capacity not recorded in source sheet (logged 0GB). Model has one M.2 slot, 256GB is standard; hold from advertised stock until capacity is bench-verified.",
+      "advertised_now": 2,
+      "total_physical": 3
+    }
+  ]
+}

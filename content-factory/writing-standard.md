@@ -1,4 +1,4 @@
-# TechPlug GH — Article Writing Standard (LOCKED)
+# TechPlug GH - Article Writing Standard (LOCKED)
 
 Every article publishes to this standard or it does not publish. This is the quality bar that
 makes the batch "severely researched" rather than generic filler.
@@ -50,9 +50,9 @@ makes the batch "severely researched" rather than generic filler.
 - Never claim done without verifying the live URL returns 200 and the slug matches.
 
 ## Per-article file trio
-1. `research/<slug>.research.md` — SERP top 10, PAA, AI Overview state, keywords, the angle.
-2. `specs/<slug>.spec.md` — the brief built from research (title, H2s, table plan, links, CTA).
-3. `articles/<slug>.html` — the final WordPress post body.
+1. `research/<slug>.research.md` - SERP top 10, PAA, AI Overview state, keywords, the angle.
+2. `specs/<slug>.spec.md` - the brief built from research (title, H2s, table plan, links, CTA).
+3. `articles/<slug>.html` - the final WordPress post body.
 
 ## Citation-moat requirements (added 2026-07-15, see GEO-DATA-LAYER.md)
 Every money page from here forward MUST also include:

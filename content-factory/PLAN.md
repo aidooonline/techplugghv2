@@ -1,4 +1,4 @@
-# TechPlug GH — Organic Content Factory & Intelligence Platform
+# TechPlug GH - Organic Content Factory & Intelligence Platform
 
 Sprint plan and system design. Status: DRAFT FOR LOCK-DOWN. Nothing built or published yet.
 Owner: Stephen (aidooonline). Site: techpluggh.com (WordPress + WooCommerce, Aurora v2 theme).
@@ -31,7 +31,7 @@ commercial spine of the entire content and ads program.
 
 ## 1. Operating model
 
-1. **All work lives in the theme repo** (`aidooonline/techplugghv2` — CONFIRM) inside a new
+1. **All work lives in the theme repo** (`aidooonline/techplugghv2` - CONFIRM) inside a new
    top-level folder: `content-factory/`. This is the source of truth. It holds every article
    spec, the locked writing standard, the publishing engine, the content index, and this plan.
 2. **Publishing is direct to WordPress** over the REST API using an Application Password you
@@ -71,14 +71,14 @@ content-factory/
 Five clusters. Each has one pillar that owns the head term and children that capture the
 long tail and feed links up to the pillar and out to the WooCommerce product/category pages.
 
-- **A. Model money pages** — 830 G6, 840 G6, 840 G5, ProBook Ryzen, ZBook. Bottom funnel.
-- **B. Category and trust** — "UK used laptops in Ghana," "refurbished business laptops Accra,"
+- **A. Model money pages** - 830 G6, 840 G6, 840 G5, ProBook Ryzen, ZBook. Bottom funnel.
+- **B. Category and trust** - "UK used laptops in Ghana," "refurbished business laptops Accra,"
   "Core i5 laptops price in Ghana." Converts and builds entity authority.
-- **C. Comparisons (GEO/AI-Overview magnets)** — G5 vs G6, EliteBook vs ProBook, EliteBook vs
+- **C. Comparisons (GEO/AI-Overview magnets)** - G5 vs G6, EliteBook vs ProBook, EliteBook vs
   Dell vs Lenovo, 8GB vs 16GB, new vs UK-used. These win AI Overview and "vs" SERPs.
-- **D. Buyer guides / use-case (top and mid funnel)** — best laptop under GHS 3,500, for
+- **D. Buyer guides / use-case (top and mid funnel)** - best laptop under GHS 3,500, for
   students, for programming, for business owners, price guides. High volume, high GEO value.
-- **E. Local + EEAT** — where to buy in Accra, how to check a used laptop, warranty/grading,
+- **E. Local + EEAT** - where to buy in Accra, how to check a used laptop, warranty/grading,
   buying online safely, the evergreen deals hub.
 
 ---
@@ -120,7 +120,7 @@ ranking. Worth knowing so expectations are set.
 
 ---
 
-## 4. The first 20 (back-dated batch) — proposed slate for lock-down
+## 4. The first 20 (back-dated batch) - proposed slate for lock-down
 
 Ordered so the earliest dates carry foundational trust/category pieces and the most recent
 dates carry the sharpest commercial pieces (freshest = highest intent).
@@ -161,7 +161,7 @@ first 20 are approved.
 
 ---
 
-## 5. The locked writing standard (draft — becomes writing-standard.md)
+## 5. The locked writing standard (draft - becomes writing-standard.md)
 
 Every article must hit all of these or it does not publish:
 
@@ -204,7 +204,7 @@ This is what makes them "severely researched" rather than generic. For each arti
 
 ## 7. Sprints
 
-**Sprint 0 — Foundations (setup, no content yet)**
+**Sprint 0 - Foundations (setup, no content yet)**
 - Create `content-factory/` in the repo. Add PLAN.md, writing-standard.md, empty index.
 - Build `engine/publish.py` (WP REST, app-password auth, back-date, schedule, idempotent,
   sets category/tags/featured image/schema/meta). Test on ONE throwaway draft first.
@@ -212,19 +212,19 @@ This is what makes them "severely researched" rather than generic. For each arti
 - Confirm SEO plugin in use (Yoast / The SEO Framework / Rank Math) so meta is set correctly.
 - Decide categories/tags taxonomy for the blog.
 
-**Sprint 1 — First 5 articles, back-dated**
+**Sprint 1 - First 5 articles, back-dated**
 - Research + write + publish articles 1 to 5 (dates 19 May to 31 May). Verify each is live,
   indexed-eligible, schema valid, links resolve, CTA points at a real product page.
 
-**Sprint 2 — Articles 6 to 12**
+**Sprint 2 - Articles 6 to 12**
 
-**Sprint 3 — Articles 13 to 20** (completes the back-dated batch, lands #20 today)
+**Sprint 3 - Articles 13 to 20** (completes the back-dated batch, lands #20 today)
 
-**Sprint 4 — Lock the future 30, then schedule-publish in waves** (3-day interval, +90 days)
+**Sprint 4 - Lock the future 30, then schedule-publish in waves** (3-day interval, +90 days)
 
-**Sprint 5 — Measurement wired** (GSC, indexation check, AI Overview citation tracking)
+**Sprint 5 - Measurement wired** (GSC, indexation check, AI Overview citation tracking)
 
-**Sprint 6 — Google Ads intelligence layer** (separate lock-down, after organic is running)
+**Sprint 6 - Google Ads intelligence layer** (separate lock-down, after organic is running)
 
 Definition of done per article: live URL returns 200, schema validates, primary keyword in
 title/H1/first paragraph/slug, at least 3 internal links, CTA links to a real SKU, entry
@@ -274,10 +274,10 @@ You asked for the full vision. Here is what turns 50 articles into a system.
 
 ---
 
-## 9. CONFIRM BEFORE BUILD (open items — do not want to assume)
+## 9. CONFIRM BEFORE BUILD (open items - do not want to assume)
 
-1. **Repo name/branch** — is it `aidooonline/techplugghv2`, and which branch do I work on?
-2. **Application password** — you provide the WP username + app password for techpluggh.com.
+1. **Repo name/branch** - is it `aidooonline/techplugghv2`, and which branch do I work on?
+2. **Application password** - you provide the WP username + app password for techpluggh.com.
 3. **Are the WooCommerce products already listed?** Conversion articles must link to real
    product/category URLs. If the 90 units are not yet listed as products, that is a dependency
    we sequence first (or I write to category pages until they exist).

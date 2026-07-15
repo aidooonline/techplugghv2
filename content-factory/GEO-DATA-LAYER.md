@@ -1,4 +1,4 @@
-# The Citation Moat — a new GEO layer for TechPlug GH
+# The Citation Moat - a new GEO layer for TechPlug GH
 
 The discovery. Most SEO content competes to rank. In 2026 the bigger prize is being the source
 that AI Overviews, ChatGPT, Gemini, Perplexity and Google cite. Answer engines do not cite
