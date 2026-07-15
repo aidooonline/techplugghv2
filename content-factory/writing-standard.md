@@ -53,3 +53,12 @@ makes the batch "severely researched" rather than generic filler.
 1. `research/<slug>.research.md` — SERP top 10, PAA, AI Overview state, keywords, the angle.
 2. `specs/<slug>.spec.md` — the brief built from research (title, H2s, table plan, links, CTA).
 3. `articles/<slug>.html` — the final WordPress post body.
+
+## Citation-moat requirements (added 2026-07-15, see GEO-DATA-LAYER.md)
+Every money page from here forward MUST also include:
+- A Quick Answer capsule in the first 60 words (model, price, key numbers, verdict).
+- At least one original data element (grading standard, price context, or benchmark reading).
+- Dated pricing ("verified [month year]") and a price table.
+- An engineered Q&A block using the exact prompts people type into AI assistants.
+- Inline JSON-LD: Product + Offer, FAQPage, and Dataset where original data is present.
+- Fact-dense numeric statements over vague adjectives (real benchmarks, Wh, kg, seconds).
