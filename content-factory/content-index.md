@@ -10,6 +10,13 @@
 | 340 | core-i5-business-laptops-price-ghana | publish | 2026-06-03 | Core i5 Business Laptops Price in Ghana | https://techpluggh.com/2026/06/03/core-i5-business-laptops-price-ghana/ |
 | 341 | best-business-laptop-ghana-under-3500 | publish | 2026-06-06 | Best Business Laptop in Ghana Under GHS 3,500 | https://techpluggh.com/2026/06/06/best-business-laptop-ghana-under-3500/ |
 | 342 | hp-elitebook-vs-probook | publish | 2026-06-09 | HP EliteBook vs ProBook: Which Should You Buy? | https://techpluggh.com/2026/06/09/hp-elitebook-vs-probook/ |
+| 343 | 8gb-vs-16gb-ram-laptop | publish | 2026-06-12 | 8GB vs 16GB RAM: How Much Do You Actually Need? | https://techpluggh.com/2026/06/12/8gb-vs-16gb-ram-laptop/ |
+| 344 | best-laptop-for-university-students-ghana | publish | 2026-06-15 | Best Laptop for University Students in Ghana | https://techpluggh.com/2026/06/15/best-laptop-for-university-students-ghana/ |
+| 345 | best-laptop-for-programming-ghana | publish | 2026-06-18 | Best Laptop for Programming and Coding in Ghana | https://techpluggh.com/2026/06/18/best-laptop-for-programming-ghana/ |
+| 346 | best-laptop-for-business-owners-accountants-ghana | publish | 2026-06-21 | Best Laptop for Business Owners and Accountants in Ghana | https://techpluggh.com/2026/06/21/best-laptop-for-business-owners-accountants-ghana/ |
+| 347 | how-to-check-a-used-laptop-before-buying-ghana | publish | 2026-06-24 | How to Check a Used Laptop Before You Buy (Ghana Guide) | https://techpluggh.com/2026/06/24/how-to-check-a-used-laptop-before-buying-ghana/ |
+| 348 | where-to-buy-original-hp-laptops-accra | publish | 2026-06-27 | Where to Buy Original HP Laptops in Accra | https://techpluggh.com/2026/06/27/where-to-buy-original-hp-laptops-accra/ |
+| 349 | hp-elitebook-830-g6-review | publish | 2026-06-30 | HP EliteBook 830 G6 Review: Still Worth It in 2026? | https://techpluggh.com/2026/06/30/hp-elitebook-830-g6-review/ |
 | 329 | hp-elitebook-840-g5-price-in-ghana | publish | 2026-07-03 | HP EliteBook 840 G5 Price in Ghana | https://techpluggh.com/2026/07/03/hp-elitebook-840-g5-price-in-ghana/ |
 | 330 | hp-probook-445-ryzen-5-price-in-ghana | publish | 2026-07-06 | HP ProBook 445 Ryzen 5 Price in Ghana | https://techpluggh.com/2026/07/06/hp-probook-445-ryzen-5-price-in-ghana/ |
 | 331 | hp-zbook-15-g5-workstation-ghana | publish | 2026-07-09 | HP ZBook 15 G5 Mobile Workstation Price in Ghana | https://techpluggh.com/2026/07/09/hp-zbook-15-g5-workstation-ghana/ |
