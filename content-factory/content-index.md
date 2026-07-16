@@ -28,3 +28,7 @@
 | 354 | hp-zbook-15-g5-review | future | 2026-07-27 | HP ZBook 15 G5 Review: A Mobile Workstation for Design and Engineering | https://techpluggh.com/?p=354 |
 | 358 | hp-elitebook-840-g5-vs-840-g6 | future | 2026-07-30 | HP EliteBook 840 G5 vs 840 G6: Differences That Matter | https://techpluggh.com/?p=358 |
 | 359 | hp-elitebook-830-g6-vs-840-g6 | future | 2026-08-02 | HP EliteBook 830 G6 vs 840 G6: 13-inch or 14-inch? | https://techpluggh.com/?p=359 |
+| 362 | hp-elitebook-vs-dell-latitude-vs-lenovo-thinkpad | future | 2026-08-05 | HP EliteBook vs Dell Latitude vs Lenovo ThinkPad in Ghana | https://techpluggh.com/?p=362 |
+| 363 | intel-core-i5-vs-ryzen-5-business-laptop | future | 2026-08-08 | Intel Core i5 vs AMD Ryzen 5 for a Business Laptop | https://techpluggh.com/?p=363 |
+| 364 | ssd-vs-hdd-laptop-ghana | future | 2026-08-11 | SSD vs HDD in a Laptop: Why It Matters More Than You Think | https://techpluggh.com/?p=364 |
+| 365 | hp-elitebook-vs-macbook-ghana | future | 2026-08-14 | HP EliteBook vs MacBook in Ghana: Which Makes Sense? | https://techpluggh.com/?p=365 |

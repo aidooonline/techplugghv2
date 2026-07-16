@@ -258,7 +258,7 @@
       "tags": "comparison, buying guide",
       "cluster": "C",
       "kind": "comparison",
-      "status": "future_to_write"
+      "status": "scheduled"
     },
     {
       "slot": 8,
@@ -269,7 +269,7 @@
       "tags": "comparison, buying guide",
       "cluster": "C",
       "kind": "comparison",
-      "status": "future_to_write"
+      "status": "scheduled"
     },
     {
       "slot": 9,
@@ -280,7 +280,7 @@
       "tags": "comparison, buying guide",
       "cluster": "C",
       "kind": "comparison",
-      "status": "future_to_write"
+      "status": "scheduled"
     },
     {
       "slot": 10,
@@ -291,7 +291,7 @@
       "tags": "comparison, buying guide",
       "cluster": "C",
       "kind": "comparison",
-      "status": "future_to_write"
+      "status": "scheduled"
     },
     {
       "slot": 11,
