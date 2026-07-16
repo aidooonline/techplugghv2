@@ -22,3 +22,9 @@
 | 331 | hp-zbook-15-g5-workstation-ghana | publish | 2026-07-09 | HP ZBook 15 G5 Mobile Workstation Price in Ghana | https://techpluggh.com/2026/07/09/hp-zbook-15-g5-workstation-ghana/ |
 | 332 | hp-elitebook-840-g6-price-in-ghana | publish | 2026-07-12 | HP EliteBook 840 G6 Price in Ghana | https://techpluggh.com/2026/07/12/hp-elitebook-840-g6-price-in-ghana/ |
 | 333 | hp-elitebook-830-g6-price-in-ghana | publish | 2026-07-15 | HP EliteBook 830 G6 Price in Ghana | https://techpluggh.com/2026/07/15/hp-elitebook-830-g6-price-in-ghana/ |
+| 350 | hp-elitebook-840-g6-review | future | 2026-07-18 | HP EliteBook 840 G6 Review: Specs, Performance and Verdict | https://techpluggh.com/?p=350 |
+| 352 | hp-elitebook-840-g5-review | future | 2026-07-21 | HP EliteBook 840 G5 Review: Is It Still Worth Buying? | https://techpluggh.com/?p=352 |
+| 353 | hp-probook-445-ryzen-5-review | future | 2026-07-24 | HP ProBook 445 Ryzen 5 Review: The AMD Value Pick | https://techpluggh.com/?p=353 |
+| 354 | hp-zbook-15-g5-review | future | 2026-07-27 | HP ZBook 15 G5 Review: A Mobile Workstation for Design and Engineering | https://techpluggh.com/?p=354 |
+| 358 | hp-elitebook-840-g5-vs-840-g6 | future | 2026-07-30 | HP EliteBook 840 G5 vs 840 G6: Differences That Matter | https://techpluggh.com/?p=358 |
+| 359 | hp-elitebook-830-g6-vs-840-g6 | future | 2026-08-02 | HP EliteBook 830 G6 vs 840 G6: 13-inch or 14-inch? | https://techpluggh.com/?p=359 |

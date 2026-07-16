@@ -181,5 +181,337 @@
       "status": "published"
     }
   ],
-  "future_note": "After the back-dated 20, schedule the remaining backlog (model reviews, more comparisons, use-cases, local long-tail, seasonal) at 3-day intervals from 2026-07-18 to 2026-10-13 (30 slots) using status 'future' in publish.py (WP auto-schedules future dates)."
+  "future_note": "After the back-dated 20, schedule the remaining backlog (model reviews, more comparisons, use-cases, local long-tail, seasonal) at 3-day intervals from 2026-07-18 to 2026-10-13 (30 slots) using status 'future' in publish.py (WP auto-schedules future dates).",
+  "future": [
+    {
+      "slot": 1,
+      "date": "2026-07-18T09:00:00",
+      "slug": "hp-elitebook-840-g6-review",
+      "title": "HP EliteBook 840 G6 Review: Specs, Performance and Verdict",
+      "category": "Laptops",
+      "tags": "HP EliteBook, review, specs",
+      "cluster": "A",
+      "kind": "review",
+      "status": "scheduled"
+    },
+    {
+      "slot": 2,
+      "date": "2026-07-21T09:00:00",
+      "slug": "hp-elitebook-840-g5-review",
+      "title": "HP EliteBook 840 G5 Review: Is It Still Worth Buying?",
+      "category": "Laptops",
+      "tags": "HP EliteBook, review, specs",
+      "cluster": "A",
+      "kind": "review",
+      "status": "scheduled"
+    },
+    {
+      "slot": 3,
+      "date": "2026-07-24T09:00:00",
+      "slug": "hp-probook-445-ryzen-5-review",
+      "title": "HP ProBook 445 Ryzen 5 Review: The AMD Value Pick",
+      "category": "Laptops",
+      "tags": "HP EliteBook, review, specs",
+      "cluster": "A",
+      "kind": "review",
+      "status": "scheduled"
+    },
+    {
+      "slot": 4,
+      "date": "2026-07-27T09:00:00",
+      "slug": "hp-zbook-15-g5-review",
+      "title": "HP ZBook 15 G5 Review: A Mobile Workstation for Design and Engineering",
+      "category": "Laptops",
+      "tags": "HP EliteBook, review, specs",
+      "cluster": "A",
+      "kind": "review",
+      "status": "scheduled"
+    },
+    {
+      "slot": 5,
+      "date": "2026-07-30T09:00:00",
+      "slug": "hp-elitebook-840-g5-vs-840-g6",
+      "title": "HP EliteBook 840 G5 vs 840 G6: Differences That Matter",
+      "category": "Laptops",
+      "tags": "comparison, buying guide",
+      "cluster": "C",
+      "kind": "comparison",
+      "status": "scheduled"
+    },
+    {
+      "slot": 6,
+      "date": "2026-08-02T09:00:00",
+      "slug": "hp-elitebook-830-g6-vs-840-g6",
+      "title": "HP EliteBook 830 G6 vs 840 G6: 13-inch or 14-inch?",
+      "category": "Laptops",
+      "tags": "comparison, buying guide",
+      "cluster": "C",
+      "kind": "comparison",
+      "status": "scheduled"
+    },
+    {
+      "slot": 7,
+      "date": "2026-08-05T09:00:00",
+      "slug": "hp-elitebook-vs-dell-latitude-vs-lenovo-thinkpad",
+      "title": "HP EliteBook vs Dell Latitude vs Lenovo ThinkPad in Ghana",
+      "category": "Laptops",
+      "tags": "comparison, buying guide",
+      "cluster": "C",
+      "kind": "comparison",
+      "status": "future_to_write"
+    },
+    {
+      "slot": 8,
+      "date": "2026-08-08T09:00:00",
+      "slug": "intel-core-i5-vs-ryzen-5-business-laptop",
+      "title": "Intel Core i5 vs AMD Ryzen 5 for a Business Laptop",
+      "category": "Laptops",
+      "tags": "comparison, buying guide",
+      "cluster": "C",
+      "kind": "comparison",
+      "status": "future_to_write"
+    },
+    {
+      "slot": 9,
+      "date": "2026-08-11T09:00:00",
+      "slug": "ssd-vs-hdd-laptop-ghana",
+      "title": "SSD vs HDD in a Laptop: Why It Matters More Than You Think",
+      "category": "Laptops",
+      "tags": "comparison, buying guide",
+      "cluster": "C",
+      "kind": "comparison",
+      "status": "future_to_write"
+    },
+    {
+      "slot": 10,
+      "date": "2026-08-14T09:00:00",
+      "slug": "hp-elitebook-vs-macbook-ghana",
+      "title": "HP EliteBook vs MacBook in Ghana: Which Makes Sense?",
+      "category": "Laptops",
+      "tags": "comparison, buying guide",
+      "cluster": "C",
+      "kind": "comparison",
+      "status": "future_to_write"
+    },
+    {
+      "slot": 11,
+      "date": "2026-08-17T09:00:00",
+      "slug": "best-laptop-for-working-from-home-ghana",
+      "title": "Best Laptop for Working From Home in Ghana",
+      "category": "Laptops",
+      "tags": "buying guide, use case",
+      "cluster": "D",
+      "kind": "use-case",
+      "status": "future_to_write"
+    },
+    {
+      "slot": 12,
+      "date": "2026-08-20T09:00:00",
+      "slug": "best-laptop-for-nss-personnel-ghana",
+      "title": "Best Laptop for NSS Personnel in Ghana",
+      "category": "Laptops",
+      "tags": "buying guide, use case",
+      "cluster": "D",
+      "kind": "use-case",
+      "status": "future_to_write"
+    },
+    {
+      "slot": 13,
+      "date": "2026-08-23T09:00:00",
+      "slug": "best-laptop-for-freelancers-ghana",
+      "title": "Best Laptop for Freelancers in Ghana",
+      "category": "Laptops",
+      "tags": "buying guide, use case",
+      "cluster": "D",
+      "kind": "use-case",
+      "status": "future_to_write"
+    },
+    {
+      "slot": 14,
+      "date": "2026-08-26T09:00:00",
+      "slug": "best-laptop-for-graphic-design-ghana",
+      "title": "Best Laptop for Graphic Design in Ghana",
+      "category": "Laptops",
+      "tags": "buying guide, use case",
+      "cluster": "D",
+      "kind": "use-case",
+      "status": "future_to_write"
+    },
+    {
+      "slot": 15,
+      "date": "2026-08-29T09:00:00",
+      "slug": "best-laptop-for-online-trading-ghana",
+      "title": "Best Laptop for Online Trading and Forex in Ghana",
+      "category": "Laptops",
+      "tags": "buying guide, use case",
+      "cluster": "D",
+      "kind": "use-case",
+      "status": "future_to_write"
+    },
+    {
+      "slot": 16,
+      "date": "2026-09-01T09:00:00",
+      "slug": "best-laptop-for-nursing-students-ghana",
+      "title": "Best Laptop for Nursing Students in Ghana",
+      "category": "Laptops",
+      "tags": "buying guide, use case",
+      "cluster": "D",
+      "kind": "use-case",
+      "status": "future_to_write"
+    },
+    {
+      "slot": 17,
+      "date": "2026-09-04T09:00:00",
+      "slug": "best-laptop-for-teachers-ghana",
+      "title": "Best Laptop for Teachers in Ghana",
+      "category": "Laptops",
+      "tags": "buying guide, use case",
+      "cluster": "D",
+      "kind": "use-case",
+      "status": "future_to_write"
+    },
+    {
+      "slot": 18,
+      "date": "2026-09-07T09:00:00",
+      "slug": "best-office-laptop-under-3000-ghana",
+      "title": "Best Office Laptop Under GHS 3,000 in Ghana",
+      "category": "Laptops",
+      "tags": "buying guide, use case",
+      "cluster": "D",
+      "kind": "use-case",
+      "status": "future_to_write"
+    },
+    {
+      "slot": 19,
+      "date": "2026-09-10T09:00:00",
+      "slug": "laptop-shops-in-osu-accra",
+      "title": "Laptop Shops in Osu, Accra: A Buyer's Guide",
+      "category": "Laptops",
+      "tags": "Accra, buying guide, delivery",
+      "cluster": "E",
+      "kind": "local",
+      "status": "future_to_write"
+    },
+    {
+      "slot": 20,
+      "date": "2026-09-13T09:00:00",
+      "slug": "laptop-delivery-in-kumasi",
+      "title": "Buying a Laptop in Kumasi: Delivery and Options",
+      "category": "Laptops",
+      "tags": "Accra, buying guide, delivery",
+      "cluster": "E",
+      "kind": "local",
+      "status": "future_to_write"
+    },
+    {
+      "slot": 21,
+      "date": "2026-09-16T09:00:00",
+      "slug": "laptop-delivery-in-takoradi",
+      "title": "Buying a Laptop in Takoradi: Delivery and Options",
+      "category": "Laptops",
+      "tags": "Accra, buying guide, delivery",
+      "cluster": "E",
+      "kind": "local",
+      "status": "future_to_write"
+    },
+    {
+      "slot": 22,
+      "date": "2026-09-19T09:00:00",
+      "slug": "where-to-buy-laptops-in-east-legon",
+      "title": "Where to Buy Laptops in East Legon, Accra",
+      "category": "Laptops",
+      "tags": "Accra, buying guide, delivery",
+      "cluster": "E",
+      "kind": "local",
+      "status": "future_to_write"
+    },
+    {
+      "slot": 23,
+      "date": "2026-09-22T09:00:00",
+      "slug": "buying-a-laptop-online-in-ghana-safely",
+      "title": "How to Buy a Laptop Online in Ghana Safely",
+      "category": "Laptops",
+      "tags": "buying guide, refurbished laptops",
+      "cluster": "E",
+      "kind": "trust",
+      "status": "future_to_write"
+    },
+    {
+      "slot": 24,
+      "date": "2026-09-25T09:00:00",
+      "slug": "back-to-school-laptop-deals-ghana",
+      "title": "Back to School Laptop Deals in Ghana",
+      "category": "Laptops",
+      "tags": "deals, buying guide",
+      "cluster": "D",
+      "kind": "seasonal",
+      "status": "future_to_write"
+    },
+    {
+      "slot": 25,
+      "date": "2026-09-28T09:00:00",
+      "slug": "black-friday-laptop-deals-ghana",
+      "title": "Black Friday Laptop Deals in Ghana: What to Expect",
+      "category": "Laptops",
+      "tags": "deals, buying guide",
+      "cluster": "E",
+      "kind": "seasonal",
+      "status": "future_to_write"
+    },
+    {
+      "slot": 26,
+      "date": "2026-10-01T09:00:00",
+      "slug": "year-end-laptop-deals-ghana",
+      "title": "Year End Laptop Deals in Ghana",
+      "category": "Laptops",
+      "tags": "deals, buying guide",
+      "cluster": "E",
+      "kind": "seasonal",
+      "status": "future_to_write"
+    },
+    {
+      "slot": 27,
+      "date": "2026-10-04T09:00:00",
+      "slug": "laptop-warranty-in-ghana-explained",
+      "title": "Laptop Warranty in Ghana Explained",
+      "category": "Laptops",
+      "tags": "buying guide, refurbished laptops",
+      "cluster": "B",
+      "kind": "trust",
+      "status": "future_to_write"
+    },
+    {
+      "slot": 28,
+      "date": "2026-10-07T09:00:00",
+      "slug": "caring-for-a-laptop-in-ghana-heat-and-power",
+      "title": "Caring for a Laptop in Ghana: Heat, Dust and Power",
+      "category": "Laptops",
+      "tags": "buying guide, refurbished laptops",
+      "cluster": "E",
+      "kind": "trust",
+      "status": "future_to_write"
+    },
+    {
+      "slot": 29,
+      "date": "2026-10-10T09:00:00",
+      "slug": "extend-laptop-battery-life-ghana",
+      "title": "How to Extend Your Laptop Battery Life",
+      "category": "Laptops",
+      "tags": "buying guide, refurbished laptops",
+      "cluster": "E",
+      "kind": "trust",
+      "status": "future_to_write"
+    },
+    {
+      "slot": 30,
+      "date": "2026-10-13T09:00:00",
+      "slug": "laptop-deals-accra-this-month",
+      "title": "Laptop Deals in Accra This Month",
+      "category": "Laptops",
+      "tags": "deals, Accra",
+      "cluster": "E",
+      "kind": "hub",
+      "status": "future_to_write"
+    }
+  ]
 }
