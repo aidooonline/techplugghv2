@@ -112,19 +112,46 @@ add_filter( 'body_class', function ( $classes ) {
  * at most once per hour, on admin requests only.
  */
 add_action( 'admin_init', function () {
+	global $pagenow;
+
+	// Never run during a form submission or on the editor save screens.
+	// This guard must never share a request with a product/post save, an
+	// upload, or an AJAX/REST call, so it can never interfere with saving.
+	if ( ! empty( $_POST ) ) { return; }
+	if ( isset( $_GET['action'] ) || isset( $_GET['bulk_edit'] ) ) { return; }
+	if ( wp_doing_ajax() || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) ) { return; }
+	if ( in_array( $pagenow, array( 'post.php', 'post-new.php', 'async-upload.php', 'media-new.php', 'edit.php' ), true ) ) { return; }
+
 	$guard_key = 'tpg_perms_guard_' . get_stylesheet();
 	if ( get_transient( $guard_key ) ) { return; }
 	set_transient( $guard_key, 1, HOUR_IN_SECONDS );
-	$dir = get_template_directory();
-	@chmod( $dir, 0755 );
-	$it = new RecursiveIteratorIterator(
-		new RecursiveDirectoryIterator( $dir, FilesystemIterator::SKIP_DOTS ),
-		RecursiveIteratorIterator::SELF_FIRST
-	);
-	foreach ( $it as $item ) {
-		$p = $item->getPathname();
-		if ( false !== strpos( $p, DIRECTORY_SEPARATOR . '.git' ) ) { continue; }
-		$want = $item->isDir() ? 0755 : 0644;
-		if ( ( fileperms( $p ) & 0777 ) !== $want ) { @chmod( $p, $want ); }
+
+	try {
+		$dir = get_template_directory();
+		@chmod( $dir, 0755 );
+		// CATCH_GET_CHILD: skip directories PHP cannot open instead of
+		// throwing an uncaught UnexpectedValueException that would fatal
+		// the request on hardened shared hosting.
+		$it = new RecursiveIteratorIterator(
+			new RecursiveDirectoryIterator(
+				$dir,
+				FilesystemIterator::SKIP_DOTS | FilesystemIterator::CURRENT_AS_FILEINFO
+			),
+			RecursiveIteratorIterator::SELF_FIRST,
+			RecursiveIteratorIterator::CATCH_GET_CHILD
+		);
+		foreach ( $it as $item ) {
+			$p = $item->getPathname();
+			// Skip VCS, build and factory folders that are not part of the live theme.
+			if ( false !== strpos( $p, DIRECTORY_SEPARATOR . '.git' ) ) { continue; }
+			if ( false !== strpos( $p, DIRECTORY_SEPARATOR . 'node_modules' ) ) { continue; }
+			if ( false !== strpos( $p, DIRECTORY_SEPARATOR . 'content-factory' ) ) { continue; }
+			if ( false !== strpos( $p, DIRECTORY_SEPARATOR . 'google-ads' ) ) { continue; }
+			$want = $item->isDir() ? 0755 : 0644;
+			if ( ( fileperms( $p ) & 0777 ) !== $want ) { @chmod( $p, $want ); }
+		}
+	} catch ( \Throwable $e ) {
+		// Never let permission repair break an admin request. Fail silent.
+		return;
 	}
 } );
