@@ -71,6 +71,12 @@ function tpgb_get_or_create_page() {
 
 /** Safety net: recreate the page if it was deleted while active. */
 add_action( 'admin_init', function () {
+	global $pagenow;
+	// Never touch the database during a save, upload, AJAX or REST request,
+	// so this can never share a request with a product/post save.
+	if ( ! empty( $_POST ) || wp_doing_ajax() || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) ) { return; }
+	if ( in_array( $pagenow, array( 'post.php', 'post-new.php', 'async-upload.php', 'media-new.php', 'edit.php' ), true ) ) { return; }
+
 	$id = (int) get_option( 'tpgb_page_id' );
 	if ( ! $id || ! get_post( $id ) || 'trash' === get_post_status( $id ) ) {
 		tpgb_get_or_create_page();
